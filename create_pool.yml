@@ -4,25 +4,25 @@
   tasks:
   - name: Add Webserver A
     bigip_node:
-       server: {{ bigip_server }}
-       user: {{ bigip_username }}
-       password: {{ bigip_password }}
+       server: "{{ bigip_server }}"
+       user: "{{ bigip_username }}"
+       password: "{{ bigip_password }}"
        host: "10.128.20.104"
        validate_certs: False
 
   - name: Add Webserver B
     bigip_node:
-      server: {{ bigip_server }}
-      user: {{ bigip_username }}
-      password: {{ bigip_password }}
+      server: "{{ bigip_server }}"
+      user: "{{ bigip_username }}"
+      password: "{{ bigip_password }}"
       host: "10.128.20.105"
       validate_certs: False
 
   - name: Create Webserver Pool
     bigip_pool:
-      server: {{ bigip_server }}
-      user: {{ bigip_username }}
-      password: {{ bigip_password }}
+      server: "{{ bigip_server }}"
+      user: "{{ bigip_username }}"
+      password: "{{ bigip_password }}"
       name: "ansible_webserver_pool"
       lb_method: "round-robin"
       monitors:
