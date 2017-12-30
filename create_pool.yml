@@ -29,7 +29,22 @@
       lb_method: "round-robin"
       monitors:
       - http
-      bigip_pool_member:
-      - "10.128.20.104:80"
-      - "10.128.20.105:80"
       validate_certs: False
+
+  - name: Add Webserver A to Webserver Pool
+    bigip_pool:
+      server: "{{ bigip_server }}"
+      user: "{{ bigip_username }}"
+      password: "{{ bigip_password }}"
+      pool: "ansible_webserver_pool"
+      host: "10.128.20.104"
+      port: 80
+
+  - name: Add Webserver A to Webserver Pool
+    bigip_pool:
+      server: "{{ bigip_server }}"
+      user: "{{ bigip_username }}"
+      password: "{{ bigip_password }}"
+      pool: "ansible_webserver_pool"
+      host: "10.128.20.105"
+      port: 80
