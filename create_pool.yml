@@ -34,7 +34,7 @@
       validate_certs: False
 
   - name: Add Webserver A to Webserver Pool
-    bigip_pool:
+    bigip_pool_member:
       server: "{{ bigip_server }}"
       user: "{{ bigip_username }}"
       password: "{{ bigip_password }}"
@@ -43,7 +43,7 @@
       port: 80
 
   - name: Add Webserver A to Webserver Pool
-    bigip_pool:
+    bigip_pool_member:
       server: "{{ bigip_server }}"
       user: "{{ bigip_username }}"
       password: "{{ bigip_password }}"
