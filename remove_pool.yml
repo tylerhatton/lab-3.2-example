@@ -2,17 +2,16 @@
 - hosts: bigip_devices
   connection: local
   tasks:
-  - name: Remove Webserver Pool
+  - name: Create Webserver Pool
     bigip_pool:
-      server: {{ bigip_server }}
-      user: {{ bigip_username }}
-      password: {{ bigip_password }}
+      server: "{{ bigip_server }}"
+      user: "{{ bigip_username }}"
+      password: "{{ bigip_password }}"
       name: "ansible_webserver_pool"
       lb_method: "round-robin"
       monitors:
       - http
-      bigip_pool_member:
-      - "10.128.20.104:80"
-      - "10.128.20.105:80"
+      - tcp
+      monitor_type: and_list
       validate_certs: False
       state: absent
