@@ -29,6 +29,7 @@
       lb_method: "round-robin"
       monitors:
       - http
+      monitor_type: single
       validate_certs: False
 
   - name: Add Webserver A to Webserver Pool
