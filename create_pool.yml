@@ -7,6 +7,7 @@
        server: "{{ bigip_server }}"
        user: "{{ bigip_username }}"
        password: "{{ bigip_password }}"
+       name: "10.128.20.104"
        host: "10.128.20.104"
        validate_certs: False
 
@@ -15,6 +16,7 @@
       server: "{{ bigip_server }}"
       user: "{{ bigip_username }}"
       password: "{{ bigip_password }}"
+      name: "10.128.20.105"
       host: "10.128.20.105"
       validate_certs: False
 
